@@ -1,0 +1,58 @@
+# Camera settings
+camera:
+  device_id: 0  # Default camera device ID
+  width: 640    # Frame width
+  height: 480   # Frame height
+  fps: 30       # Frames per second
+
+# Face recognition settings
+face_recognition:
+  tolerance: 0.45        # Face recognition tolerance (lower = more strict)
+  min_face_size: 20     # Minimum face size to detect
+  capture_count: 10     # Number of face images to capture during training
+  capture_interval: 1.0 # Interval between captures in seconds
+  model_type: "hog"  # hog (CPU) 或 cnn (GPU)
+
+# Training settings
+training:
+  face_encoding_model: "hog"  # Options: "hog" (CPU) or "cnn" (GPU)
+  save_interval: 5            # Save face encoding every N captures
+
+# Voice response settings (optional)
+voice:
+  enabled: true
+  sample_rate: 16000
+  duration: 5.0  # 录音时长（秒）
+  channels: 1
+  device_id: 0
+  language: "zh-CN"
+
+# Logging settings
+logging:
+  level: "INFO"   # Logging level (DEBUG, INFO, WARNING, ERROR)
+  save_images: true  # Whether to save captured face images
+  save_audio: true
+  log_dir: "logs"
+
+# 配置项，如相机索引、距离阈值
+# camera_index: 摄像头设备索引号
+# face_distance_threshold: 人脸识别距离阈值（越小越严格）
+# encoding_output_path: 编码文件保存路径
+
+camera_index: 0
+face_distance_threshold: 0.45
+encoding_output_path: "data/master_face_encoding.pkl"
+
+# Memory settings
+memory:
+  db_path: "data/memory.db"
+  backup_interval: 3600  # 备份间隔（秒）
+  max_entries: 10000    # 最大记录数
+  retention_days: 30    # 数据保留天数
+
+# Bonding settings
+bonding:
+  initial_score: 0.5    # 初始亲密度
+  learning_rate: 0.01   # 学习率
+  update_interval: 3600 # 更新间隔（秒）
+  decay_factor: 0.95    # 衰减因子 
