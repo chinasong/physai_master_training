@@ -7,7 +7,7 @@ camera:
 
 # Face recognition settings
 face_recognition:
-  tolerance: 0.45        # Face recognition tolerance (lower = more strict)
+  tolerance: 0.6        # Face recognition tolerance (lower = more strict)
   min_face_size: 20     # Minimum face size to detect
   capture_count: 10     # Number of face images to capture during training
   capture_interval: 1.0 # Interval between captures in seconds
@@ -20,19 +20,17 @@ training:
 
 # Voice response settings (optional)
 voice:
-  enabled: true
-  sample_rate: 16000
-  duration: 5.0  # 录音时长（秒）
-  channels: 1
-  device_id: 0
-  language: "zh-CN"
+  enabled: false
+  language: "zh-CN"     # 语音语言
+  volume: 0.8          # 音量（0.0-1.0）
+  rate: 150            # 语速
 
 # Logging settings
 logging:
-  level: "INFO"   # Logging level (DEBUG, INFO, WARNING, ERROR)
-  save_images: true  # Whether to save captured face images
+  level: "INFO"        # Logging level (DEBUG, INFO, WARNING, ERROR)
+  save_images: true    # Whether to save captured face images
   save_audio: true
-  log_dir: "logs"
+  log_file: "logs/training_log.txt"
 
 # 配置项，如相机索引、距离阈值
 # camera_index: 摄像头设备索引号
